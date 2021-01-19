@@ -44,63 +44,39 @@ function avgCookies(city){
   var day = [];
 
   for (var i=0;i<hoursOpen.length; i++) {
-    var avgCookiesHour = Math.floor(Math.random() * ((city.max - city.min + 1) + (city.min)) * (city.avg));
-    // console.log('AVERAGE COOKIE', avgCookiesHour);
-    city.cookiesHour.push(avgCookiesHour);
-    // console.log(city.cookiesHour, 'sdlkbskfdbklsb'); 
+    var avgCookiesHour = Math.floor(Math.random() * ((city.max - city.min) + 1) + city.min);
+    var totalCookies = Math.floor(avgCookiesHour * city.avg);
+    city.cookiesHour.push(totalCookies);
 
-    sum += avgCookiesHour;
-    // console.log(sum);
-    // var li = document.createElement('li');
-    day.push( `${hoursOpen[i]} ${avgCookiesHour} Cookies`);
+    sum += totalCookies;
+   
+    day.push( `${hoursOpen[i]} ${totalCookies} Cookies`);
+  
   } 
   console.log(day);
-  // for (currentHour  
-    // return(hoursOpen[i], city.cookiesHour[i], ' cookies');
+    day.push(`Total: ${sum} `);
     var container = document.getElementById('container');
-    // var divElement = document.createElement('div');
     var h2Element = document.createElement('h2');
     
     var ulElement = document.createElement('ul');
-    // container.appendChild(divElement);
     container.appendChild(h2Element);
     
-    // li.innerHTML = `${day}`;
-    // var array = [];
+
     day.map((each) =>{
       var li = document.createElement('li');
       li.innerHTML = `${each}`;
       ulElement.appendChild(li);
     });
-    // ulElement.appendChild(li);
+  
     h2Element.innerHTML = city.city; 
     
     container.appendChild(ulElement);
 
-    
-    // var listElement = document.createElement('ul');
-
-    // ${city.cookiesHour}
-    // return(hoursOpen[i], city.cookiesHour[i]);
+  
   
 }
  
-// function print()
-  // var container = document.getElementById('container');
-  // var divElement = document.createElement('div');
-  // var h2Element = document.createElement('h2');
-  // h2Element.innerHTML = city5.city; 
-  // var listElement = document.createElement('ul');
-  // // sectionElement.innerHTML = avgCookies;
 
-  // container.appendChild(h2Element);
-  // var sectionElement = document.createElement('section');
-  // h2Element.appendChild(sectionElement);
- 
-  // sectionElement.
-  // console.log('Append should happen');
-  // document.getElementById('test').textContent = city5.city;
-  // return result;
 
   // for(const city in city5){
   //   console.log(city, city5[avg]);
