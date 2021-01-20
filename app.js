@@ -6,7 +6,7 @@ sectionElement.appendChild(table);
 table.appendChild(tableHead);
 
 
-hours = ['','6am:', '7am:', '8am:', '9am:', '10am:', '11am:', '12pm:', '1pm:', '2pm:', '3pm:', '4pm:', '5pm:', '6pm:', '7pm:', 'Total:'];
+hours = ['','6am:', '7am:', '8am:', '9am:', '10am:', '11am:', '12pm:', '1pm:', '2pm:', '3pm:', '4pm:', '5pm:', '6pm:', '7pm:','8pm:', 'Daily Location Total:'];
 for (var i=0;i <= hours.length; i++){
 
 var headElement = document.createElement('th');
@@ -22,17 +22,19 @@ function Location(city, min, max, avg) {
   this.max = max;
   this.avg = avg; 
   this.day = [];
-  this.hours = ['','6am:', '7am:', '8am:', '9am:', '10am:', '11am:', '12pm:', '1pm:', '2pm:', '3pm:', '4pm:', '5pm:', '6pm:', '7pm:', 'Total:'];
-
+  this.hours = ['','6am:', '7am:', '8am:', '9am:', '10am:', '11am:', '12pm:', '1pm:', '2pm:', '3pm:', '4pm:', '5pm:', '6pm:', '7pm:','8pm:', 'Daily Location Total:'];
 }
 
 
 
 Location.prototype.averageCookies = function() {
   var sum = 0;
-
+  var factor = [0.5, 0.75, 1.0, 0.6, 0.8, 1.0, 0.7, 0.4, 0.6, 0.9, 0.7, 0.5, 0.3, 0.4, 0.6];
+  // van newMax = [];
   for (var i=0;i<this.hours.length -2; i++) {
-    var avgCookiesHour = Math.floor(Math.random() * ((this.max - this.min) + 1) + this.min);
+    var newFactor = factor[i] * this.max;
+    console.log(newFactor);
+    var avgCookiesHour = Math.floor(Math.random() * ((newFactor - this.min) + 1) + this.min);
     var totalCookies = Math.floor(avgCookiesHour * this.avg);
     
     sum += totalCookies;
@@ -43,8 +45,9 @@ Location.prototype.averageCookies = function() {
   this.day.push(sum);
   console.log(this.day);
   return this.day;
-  
 }
+
+
 Location.prototype.newRow = function() {
   var rowElement = document.createElement('tr');
   var cityName = document.createElement('td');
@@ -58,6 +61,27 @@ Location.prototype.newRow = function() {
     rowElement.appendChild(cell);
     cell.textContent = this.day[i];
     
+  }
+}
+
+function hourlyTotals(){
+  var rowElement = document.createElement('tr');
+  var totalCell = document.createElement('td');
+  table.appendChild(tableBody);
+  tableBody.appendChild(rowElement);
+  rowElement.appendChild(totalCell);
+  totalCell.textContent = 'Hourly Total';
+  var hourlyTotal = seattle.day[0] + tokyo.day[0] + dubai.day[0] + paris.day[0] + paris.day[0] +lima.day[0];
+  // var total = 0;
+  console.log(`${hourlyTotal} Hourly Total`);
+
+  for (var i=0; i <hours.length -1; i++){
+    var sumTotal = seattle.day[i] + tokyo.day[i] + dubai.day[i] + paris.day[i] +lima.day[i]
+    
+    var cityName = document.createElement('td');
+    rowElement.appendChild(cityName);
+    cityName.textContent = sumTotal;
+    console.log(sumTotal);
   }
   
 }
@@ -77,6 +101,10 @@ paris.newRow();
 var lima = new Location('Lima', 2, 16, 4.6);
 lima.averageCookies();
 lima.newRow();
+
+hourlyTotals();
+
+
 
 console.log(seattle.max);
 
