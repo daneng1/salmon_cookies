@@ -25,9 +25,12 @@ function Location(city, min, max, avg) {
   this.avg = avg; 
   this.day = [];
   this.hours = hours;
+  
 
 }
-
+// function generateAvgCust(min, max){
+//   return Math.floor(Math.random() * (newFactor - this.min) + 1) + this.min;
+// }
 
 
 Location.prototype.averageCookies = function() {
@@ -56,7 +59,7 @@ Location.prototype.newRow = function() {
   table.appendChild(tableBody);
   tableBody.appendChild(rowElement);
   rowElement.appendChild(cityName);
-  cityName.textContent = this.city;
+  cityName.textContent = this.city; 
   for (var i=0;i <= this.day.length - 1; i++){
   // var total = 'Total';
     var cell = document.createElement('td');
