@@ -6,12 +6,12 @@ sectionElement.appendChild(table);
 table.appendChild(tableHead);
 
 
-hours = ['','6am:', '7am:', '8am:', '9am:', '10am:', '11am:', '12pm:', '1pm:', '2pm:', '3pm:', '4pm:', '5pm:', '6pm:', '7pm:','8pm:', 'Daily Location Total:'];
+var hours = ['','6am:', '7am:', '8am:', '9am:', '10am:', '11am:', '12pm:', '1pm:', '2pm:', '3pm:', '4pm:', '5pm:', '6pm:', '7pm:','8pm:', 'Daily Location Total:'];
 for (var i=0;i <= hours.length; i++){
 
-var headElement = document.createElement('th');
-headElement.textContent = hours[i];
-tableHead.appendChild(headElement);
+  var headElement = document.createElement('th');
+  headElement.textContent = hours[i];
+  tableHead.appendChild(headElement);
 }
 table.appendChild(headElement);
 
@@ -22,7 +22,7 @@ function Location(city, min, max, avg) {
   this.max = max;
   this.avg = avg; 
   this.day = [];
-  this.hours = ['','6am:', '7am:', '8am:', '9am:', '10am:', '11am:', '12pm:', '1pm:', '2pm:', '3pm:', '4pm:', '5pm:', '6pm:', '7pm:','8pm:', 'Daily Location Total:'];
+  this.hours = hours;
 }
 
 
@@ -106,5 +106,28 @@ hourlyTotals();
 
 
 
-console.log(seattle.max);
+console.log(location);
+
+// function to set a given theme/color-scheme
+function setTheme(themeName) {
+  localStorage.setItem('theme', themeName);
+  document.documentElement.className = themeName;
+}
+// function to toggle between light and dark theme
+function toggleTheme() {
+ if (localStorage.getItem('theme') === 'theme-dark'){
+     setTheme('theme-light');
+ } else {
+     setTheme('theme-dark');
+ }
+}
+
+(function () {
+  if (localStorage.getItem('theme') === 'theme-dark') {
+      setTheme('theme-dark');
+  } else {
+      setTheme('theme-light');
+  }
+})();
+
 

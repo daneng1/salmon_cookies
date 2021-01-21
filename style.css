@@ -1,43 +1,77 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap');
+  
 body { 
-  font-family: 'East Sea Dokdo', cursive;
-  background-image: url('salmon.jpg');
-  margin: 0px 10px;
-  width: auto;
+  
+  background-image: var(--backgound-image);
+  margin: 0px auto;
+  width: 100vw;
+}
+.theme-dark{
+  --color-primary: white;
+  --color-secondary:rgb(226, 80, 55);
+  --font-primary:white;
+  --font-secondary: rgb(226, 80, 55);
+  --backgound-image: url('salmon2.jpg');
+}
+.theme-light{
+  --color-primary:rgb(226, 80, 55);
+  --color-secondary:black;
+  --font--primary:rgb(226, 80, 55);
+  --font-secondary: white;
+  --backgound-image: url('salmon.jpg');
 }
 
 h1 {
   font-size: 128px;
+  font-family: 'East Sea Dokdo', cursive;
   text-align: center;
   margin: 50px 0px 20px 0px;
   padding-bottom: 70px;
+  color: var(--color-secondary);
   border-bottom: 1px black double;
 
 }
 header ul {
+  font-family: 'Varela Round', sans-serif;
   text-align: center;
 }
-ul li a:hover, ul li a:visited {
+
+ul li a {
+  font-family: 'Varela Round', sans-serif;
   list-style: none;
   text-decoration: none;
-  color: rgb(139, 26, 6);
+  color: var(--color-primary);
 }
+
+ul li a:visited {
+  list-style: none;
+  text-decoration: none;
+  color: var(--color-primary);
+}
+ul li a:hover{
+  color: var(--color-secondary);
+}
+
 header ul li{
   display: inline-block;
   text-align: center;
   text-decoration: none;
   list-style: none;
+  font-family: 'Varela Round', sans-serif;
   font-size: 40px;
   margin: 0px 50px;
   padding: 10px;
-  color: rgb(139, 26, 6);
+  color: var(--color-primary);
   /* position: absolute;
   top: 50px;
   right: 50px; */
 }
 
 header ul li:hover {
-  color: black;
+  color: var(--color-secondary);
 }
 figure {
   text-align: center;
@@ -46,12 +80,13 @@ figure {
 }
 img {
   text-align:center;
-  border: 1px black solid;
+  border: 1px var(--color-secondary) solid;
   border-radius: 20px;
 }
 h2 {
   font-size: 64px;
   text-align: center;
+  color: var(--color-secondary);
   margin: 10px 0px 20px 0px;
   padding-bottom: 20px;
   font-family: 'East Sea Dokdo', cursive;
@@ -60,7 +95,9 @@ h2 {
 p {
   text-align: center;
   padding: 0px 0px 30px 0px;
-  font-size: 32px;
+  font-size: 24px;
+  color: var(--color-secondary);
+  font-family: 'Varela Round', sans-serif;
 }
 table {
   font-family: Arial, Helvetica, sans-serif;
@@ -77,6 +114,35 @@ thead {
   th, tr, td {
   border: 1px black solid;
   padding: .3em;
+}
+footer{
+  width: 100vw;
+  height: 200px;
+  background-color: var(--color-primary);
+  margin: auto ;
+}
+
+section>ul>li{
+  display: inline;
+  color: var(--color-secondary);
+  text-decoration: none;
+  text-align: center;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 24px;
+  margin: auto;
+  list-style: none;
+}
+footer section {
+  margin: 10px;
+  float: left;
+
+}
+button{
+  font-size: 18px;
+  padding: 5px, 15px;
+  color: var(--font--primary);
+  background-color: var();
+  border-radius: 25px;
 }
 
 
