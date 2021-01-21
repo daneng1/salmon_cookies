@@ -13,14 +13,14 @@ body {
   --color-primary: white;
   --color-secondary:rgb(226, 80, 55);
   --font-primary:white;
-  --font-secondary: rgb(226, 80, 55);
+  --font-secondary: white;
   --backgound-image: url('salmon2.jpg');
 }
 .theme-light{
   --color-primary:rgb(226, 80, 55);
   --color-secondary:black;
   --font-primary:rgb(226, 80, 55);
-  --font-secondary: white;
+  --font-secondary:black;
   --backgound-image: url('salmon.jpg');
 }
 
@@ -31,7 +31,7 @@ h1 {
   margin: 50px 0px 20px 0px;
   padding-bottom: 70px;
   color: var(--color-secondary);
-  border-bottom: 1px black double;
+  border-bottom: 1px var(--font-secondary) double;
 
 }
 header ul {
@@ -107,15 +107,18 @@ table {
   text-align: center;
   position: relative;
   font-size: 24px;
+  margin: auto;
+  border: 3px var(--font-secondary) solid;
+  color: var(--color-secondary);
   /* border: solid 1px black; */
 }
 thead {
-  border: 1px black solid;
+  border: 1px var(--font-secondary) solid;
   margin: 0px;
   padding: 0px;
 }
   th, tr, td {
-  border: 1px black solid;
+  border: 1px var(--font-secondary) solid;
   padding: .3em;
 }
 footer{
@@ -127,7 +130,7 @@ footer{
 
 section>ul>li{
   display: inline;
-  color: var(--color-secondary);
+  
   text-decoration: none;
   text-align: center;
   font-family: 'Varela Round', sans-serif;
@@ -148,8 +151,8 @@ button{
   border-radius: 25px;
 }
 
-table {
+/* table {
   color: var(--color-secondary);
   border: 1px var(--color-secondary) solid;
   background-color: var(--font-primary);
-}
+} */
