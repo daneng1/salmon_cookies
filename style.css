@@ -141,15 +141,44 @@ section>ul>li{
 footer section {
   margin: 10px;
   float: left;
+}
+fieldset {
+  border: 1px var(--font-secondary) solid;
+  display: block;
+  margin: 25px auto;
+  width: 40%;
+  color: var(--color-secondary);
+  font-size: 24px;
+  font-family: 'Varela Round', sans-serif;
 
 }
-button{
+
+label {
+  display: block;
+  padding: 10px 10px;
+  float: right;
+}
+
+button {
   font-size: 18px;
   padding: 5px, 15px;
   color: var(--font--primary);
   background-color: var();
-  border-radius: 25px;
+  border-radius: 7px;
+  font-family: 'Varela Round', sans-serif;
 }
+fieldset>button {
+  float: right;
+  padding: 10px;
+  margin: 10px;
+  font-family: 'Varela Round', sans-serif;
+}
+
+input {
+  height: 25px;
+  font-size: 18px;
+}
+
 
 /* table {
   color: var(--color-secondary);
