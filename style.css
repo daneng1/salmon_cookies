@@ -110,7 +110,7 @@ table {
   margin: auto;
   border: 3px var(--font-secondary) solid;
   color: var(--color-secondary);
-  /* border: solid 1px black; */
+  
 }
 thead {
   border: 1px var(--font-secondary) solid;
@@ -123,14 +123,17 @@ thead {
 }
 footer{
   width: 100vw;
-  height: 200px;
+  height: 125px;
   background-color: var(--color-primary);
-  margin: auto ;
+  margin: 30px auto 0px;
+  padding: 0px 0px 0px;
+  display: flex;
+  justify-content: center;
 }
 
 section>ul>li{
   display: inline;
-  
+  margin-left: 20px;
   text-decoration: none;
   text-align: center;
   font-family: 'Varela Round', sans-serif;
@@ -140,7 +143,10 @@ section>ul>li{
 }
 footer section {
   margin: 10px;
-  float: left;
+  padding: 10px;
+  justify-content: center;
+  border-left: rgb(227, 227, 227) 3px solid;
+  
 }
 fieldset {
   border: 1px var(--font-secondary) solid;
